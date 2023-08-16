@@ -121,12 +121,15 @@ Now Sam says: “_So do I_”
 This means in the same way that Sam must have been given a sum that can only be created in one way from the remaining pairs. We can eliminate all pairs that have the same sum as some other pair. Otherwise he couldn't know for sure which pair would be correct.
 <br>
 With this step we can eliminate $4470$ pairs. We have only $1$ possible pair remaining. 
+<br>
+<br>
 
-Since we only have one possible pair left, it means that also we know what the two number are!
+### We know the two numbers
+Since we only have one possible pair left, it means that also we, from their conversation, know what the two number are!
 <br>
 **Far Out!!!**
 
-That pair is the solution!
+That remaining pair is the solution!
 
 <br>
 <br>
