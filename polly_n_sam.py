@@ -1,7 +1,13 @@
 
+# Note that changing the LOWER or UPPER bounds may also change the conditions for the information obtained from
+# the conversation between Polly and Sam. This means that some of the eliminations may not be correct with other bounds.
+# If the bounds are changed from 2 and 800 respectively, some of the elimination steps may need to be adjusted as well.
+LOWER = 2
+UPPER = 800
+
 
 def problem():
-    print("Polly and Sam are visited by a friend.\n"
+    print("\nPolly and Sam are visited by a friend.\n"
           "The friend, having thought of two numbers between 2 and 800 inclusive,\n"
           "whispers their product to Polly and their sum to Sam.\n"
           "The following dialogue takes place:\n"
@@ -13,14 +19,18 @@ def problem():
 
 
 def number_of_pairs():
-    print(f'Total number of possible pairs, (x,y): 799 * 799 = {799 * 799}')
+    pairs = [(x, y) for x in range(LOWER, UPPER + 1) for y in range(LOWER, UPPER + 1)]
+    print(f'Total number of possible pairs, (x,y): '
+          f'{(UPPER - LOWER + 1)} * {(UPPER - LOWER + 1)} = '
+          f'{(UPPER - LOWER + 1) * (UPPER - LOWER + 1)}  ({len(pairs)})')
 
 
 def redundant_pair_elimination():
     print(f'\nRedundant pairs are eliminated since (x,y) = (y,x)')
-    print(f'Eliminated number of pairs: {799 * 799 - 799 * 400}')
-    pairs = [(x, y) for x in range(2, 801) for y in range(x, 801)]
-    print(f'Remaining number of pairs: {799 * 400}  ({len(pairs)})')
+    print(f'Eliminated number of pairs: '
+          f'{(UPPER - LOWER + 1) * (UPPER - LOWER + 1) - (UPPER - LOWER + 1) * (UPPER - LOWER + 2) // 2}')
+    pairs = [(x, y) for x in range(LOWER, UPPER + 1) for y in range(x, UPPER + 1)]
+    print(f'Remaining number of pairs: {(UPPER - LOWER + 1) * (UPPER - LOWER + 2) // 2}  ({len(pairs)})')
     return pairs
 
 
