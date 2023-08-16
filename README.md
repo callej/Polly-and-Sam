@@ -49,4 +49,53 @@ For $x=3$, $y$ can be in the range $3≤y≤800 ⇒798$ pairs $(x,y)$
 <br>
 For $x=4$, $y$ can be in the range $4≤y≤800 ⇒797$ pairs $(x,y)$, and so on...
 <br>
-This is $799+798+797+⋯+1=\frac{799+1}{2}\cdot799=400\cdot799=319600$ possible pairs remaining. 
+This is $799+798+797+⋯+1=\dfrac{799+1}{2}\cdot799=400\cdot799=319600$ possible pairs remaining. 
+<br>
+<br>
+
+### Polly does not know the two numbers
+Now Polly says: “_I don’t know the two numbers._”
+This tells us two things things:
+1. Both numbers cannot be prime numbers
+2. The two numbers cannot be a prime number and that prime number squared
+
+#### Both numbers cannot be prime numbers
+If both numbers were prime numbers then Polly would immediately know the two numbers, since this would be the only way to split the product Polly was told into factors. For example, if Polly is told that the product is $35$, then she immediately knows that the two numbers are $5$ and $7$. But she doesn't know the two numbers, so with this information we can eliminate all the pairs $(x,y)$ where both $x$ and $y$ are prime numbers.
+There are $139$ prime numbers, $p$, in the range $2≤p≤800$. This means that we have $139+138+137+⋯+1=\dfrac{139+1}{2}\cdot139=9730$ pairs that are two prime numbers. We can eliminate all of those.
+<br>
+Now that we can eliminate $9730$ pairs, we have $309870$ remaining possible pairs.
+
+#### The two numbers cannot be a prime number and that prime number squared
+If $p$ is that prime number, then Polly would be told that the product is $p^3$. If so the two numbers can only be either $(p,p^2)$ or $(p^2,p)$. These are the only two ways you can split up $p^3$ into factors and having the two numbers in the range $[2,800]$. We have already eliminated $(p^2,p)$ since the order doesn’t matter due to the commutative properties of multiplication and addition. So, if Polly is given a product that is a prime number to the power of three, then she immediately knows that the two numbers are $p$ and $p^2$. Since she doesn’t know the two numbers we can now also eliminate all pairs $(p,p^2)$, where $p$ is a prime number and both $p$ and $p^2$ are in the range $[0,800]$.
+<br>
+This will eliminate $9$ pairs. Now we have $309861$ possible pairs remaining.
+<br>
+<br>
+
+### Sam knows that Polly doesn't know the two numbers
+Next Sam says: “_I know…_” in response to Polly's statement: “_I don’t know the two numbers._”
+<br>
+Now, if Sam knows that Polly doesn't know the two numbers, then the sum that Sam is told can't be any number. For some sums Sam can't be sure that Polly doesn't know the two numbers. But since he knows that Polly doesn't know the two numbers, then it tells us two things about the sum:
+1. The sum cannot be a sum of two prime numbers
+2. The sum of the pair cannot be greater than 401
+
+#### The sum cannot be a sum of two prime numbers
+The sum cannot be a number that could be created by adding two prime numbers. Otherwise, Sam couldn’t know for sure that Polly didn’t know the two numbers. This means that the sum cannot be even. Goldbach's conjecture says that every even integer greater than $2$ can be written as the sum of two primes. While the conjecture is not proven it is known to be true for even integers up to $10^{18}$, which is way more than $800$. By this we can now also eliminate every pair $(x,y)$ that produces an even sum $x+y$. Because if the sum is even, then Sam cannot know for sure that Polly didn’t know the two numbers.
+<br>
+We can now eliminate another $150399$ pairs. This leaves us with $159462$ possible remaining pairs.
+
+In addition to eliminating the pairs due to their sum being even, there are some odd sums that also can be eliminated for the same reason. $2$ is also a prime number. If the sum is a number that is a prime number plus $2$, then the two numbers could possibly be that prime number and $2$, which means that Polly from her product would know the two numbers. But since Sam knows from his sum that Polly doesn’t know the two numbers, then the sum cannot be a prime number plus $2$. With this we can eliminate all the pairs that has a sum that is $p+2$, where $p$ is a prime number.
+<br>
+This will eliminate $24831$ pairs. We now have $134631$ remaining possible pairs.
+
+#### The sum of the pair cannot be greater than 401
+If $(x,y)$ is the pair, then $x+y≤401$.
+<br>
+The reason for this is that $401$ is a prime number and $401$ is greater than $\dfrac{800}{2}=400$. We have already excluded all the even sums due to Goldbach’s conjecture. Now we can also exclude all the odd sums above 401. If the sum was $403$ then it could be the numbers $401$ and $2$, which is already excluded in prime number plus $2$ above. If the sum is $405$, then the two numbers could be $401$ and $4$. If Polly is told that the product is $1604$, then she immediately knows that the two numbers are $401$ and $4$. The prime factors of $1604$ are $2$, $2$, and $401$. But since the two numbers have to be within $2$ and $800$, then they can’t be $2$ and $802$. So, from the product $1604$ Polly would immediately know that the two numbers are $4$ and $401$. If $401$ is a factor in the product told to Polly, then the only way to split the factors into two numbers is that $401$ by one of the numbers and the remaining factors be the other number. Otherwise, the numbers will not be in the range $[2,800]$. Now, every odd sum above $401$ can be created as $401+2n$, where $n∈N$, $n≥1$. If Polly is told that the product is $401\cdot2\cdot n$, then she immediately knows that the two numbers are $2n$ and $401$. If you move any factor from $2n$ over to $401$, then it would exceed $800$, which is out of the range. Since a pair with an odd sum greater than $401$ can be created as $(2n,401)$, then every odd sum greater than $401$ could potentially be the sum of $401$ and $2n$, which means that Sam cannot be sure that Polly doesn’t know the two numbers. This now means that we can eliminate all the pairs which have a sum greater than $401$.
+<br>
+With this step we can eliminate $121635$ pairs. We have $12996$ remaining possible pairs.
+
+
+
+
+
