@@ -145,7 +145,7 @@ The program will at the end print out the solution, the only remaining pair, whi
 ## If you want to try this at home
 There is no danger in trying this at home. If someone wants to try this on his/her own, here is a similar "impossible" problem:
 
-Calle Johansson and Leif Persson are visited by their very good friend Professor Gunnar Haksell. Professor Haksell, having thought of two natural numbers, says that he will tell Calle the sum of the numbers and Leif the sum of the squares of the numbers. He then whispers the sum of the numbers to Calle so no one else can hear and then the sum of the squares of the numbers to Leif so no one else can hear. Then the following conversation takes place:
+Calle Johansson and Leif Persson are visited by their very good friend Professor Gunnar Haxell. Professor Haxell, having thought of two natural numbers, says that he will tell Calle the sum of the numbers and Leif the sum of the squares of the numbers. He then whispers the sum of the numbers to Calle so no one else can hear and then the sum of the squares of the numbers to Leif so no one else can hear. Then the following conversation takes place:
 <br>
 **Leif**:	“_I don’t know the numbers_”
 <br>
