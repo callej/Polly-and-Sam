@@ -98,9 +98,9 @@ With this step we can eliminate $121635$ pairs. We have $12996$ remaining possib
 <br>
 
 ### Sam does not know the two numbers
-After Sam has claimed that he know that Polly doesn't know the two numbers he goes on saying: “_…and neither do I_”
+After Sam has claimed that he knows that Polly doesn't know the two numbers he goes on saying: “_…and neither do I_”
 <br>
-That Sam doesn’t know the two numbers doesn’t actually give us any further information that we can use to eliminate any pairs. The only possibility that Sam would know the two numbers from the sum is if the sum would be $4$, $5$, $1599$, or $1600$, which would correspond to the pairs $(2,2)$, $(2,3)$, $(799,800)$, $(800,800)$. But all of these pairs have already been eliminated above. 
+That Sam doesn’t know the two numbers doesn’t actually give us any further information that we can use to eliminate any pairs. The only possibility that Sam would know the two numbers from the sum is if there are pairs that produce a sum that can only be produced by that specific pair of the remaining pairs. However, none of the sums produced by any of the remaining pairs can uniquely be produced by a single pair. Any sum that Sam has been given can be produced by more than one of the remaining pairs. This means that we cannot eliminate any pair from this information.
 <br>
 No pairs were eliminated by this information.
 <br>
