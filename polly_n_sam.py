@@ -95,6 +95,25 @@ def eliminating_pairs_with_sum_over_401(pairs):
     return new_pairs
 
 
+def eliminating_unique_sums(pairs: list):
+    print(f"\nEliminating pairs that have a sum that can be produced in only one way")
+    num_pairs = len(pairs)
+    summations = {}
+    for pair in pairs:
+        if pair[0] + pair[1] in summations.keys():
+            summations[pair[0] + pair[1]].append(pair)
+        else:
+            summations[pair[0] + pair[1]] = [pair]
+    new_pairs = set()
+    for num_s in summations.values():
+        if len(num_s) != 1:
+            for new_pair in num_s:
+                new_pairs.add(new_pair)
+    print(f'Eliminated number of pairs: {num_pairs - len(new_pairs)}')
+    print(f'Remaining number of pairs: {len(new_pairs)}')
+    return list(new_pairs)
+
+
 def eliminating_multiple_factorizations(pairs: list):
     print(f"\nEliminating pairs that have a product that can be factored in more than one way")
     num_pairs = len(pairs)
@@ -160,6 +179,7 @@ def main():
     pairs = eliminating_even_sums(pairs)
     pairs = eliminating_primes_plus_two_sums(pairs, primes)
     pairs = eliminating_pairs_with_sum_over_401(pairs)
+    pairs = eliminating_unique_sums(pairs)
     pairs = eliminating_multiple_factorizations(pairs)
     pairs = eliminating_multiple_sums(pairs)
     print(f'\nThe two number are: {pairs[0]}')
