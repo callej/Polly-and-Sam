@@ -13,11 +13,7 @@ Sam:       So do I
 What are the two numbers?"""
 
 
-def problem():
-    print(PROBLEM)
-
-
-def number_of_pairs(low: int, high: int):
+def initial_condition(low: int, high: int):
     pairs = [(x, y) for x in range(low, high + 1) for y in range(low, high + 1)]
     print(f'Total number of possible pairs, (x,y): '
           f'{(high - low + 1)} * {(high - low + 1)} = '
@@ -54,7 +50,7 @@ def polly_does_not_know_the_numbers(pairs: list) -> list:
 
 def sam_knows_that_polly_does_not_know_the_numbers(pairs: list, original_pairs: list) -> list:
     new_pairs = []
-    print(f"\nSam know from the sum that he is given that Polly doesn't know the two numbers.")
+    print(f"\nSam knows from the sum that he is told that Polly doesn't know the two numbers.")
     print(f"Eliminating pairs that have a sum of any of the removed pairs in the previous step.")
     removed_pairs = list(set(original_pairs) - set(pairs))
     forbidden_sums = set()
@@ -131,7 +127,7 @@ def sam_knows_the_two_numbers(pairs: list) -> list:
 def main():
     print(PROBLEM)
     print("\n\nSOLUTION\n========")
-    number_of_pairs(LOW, HIGH)
+    initial_condition(LOW, HIGH)
     original_pairs = redundant_pair_elimination(LOW, HIGH)
     pairs = polly_does_not_know_the_numbers(original_pairs)
     pairs = sam_knows_that_polly_does_not_know_the_numbers(pairs, original_pairs)
