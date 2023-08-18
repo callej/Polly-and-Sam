@@ -83,6 +83,19 @@ def eliminating_primes_plus_two_sums(pairs, primes):
     return new_pairs
 
 
+def eliminating_qube_prime_sums(pairs, primes):
+    new_pairs = []
+    print(f"\nEliminating pairs that have a sum that is a prime number plus that prime number squared")
+    num_pairs = len(pairs)
+    qube_sums = [p + p * p for p in primes if p in range(LOWER, UPPER + 1) and p * p in range(LOWER, UPPER + 1)]
+    for pair in pairs:
+        if (pair[0] + pair[1]) not in qube_sums:
+            new_pairs.append(pair)
+    print(f'Eliminated number of pairs: {num_pairs - len(new_pairs)}')
+    print(f'Remaining number of pairs: {len(new_pairs)}')
+    return new_pairs
+
+
 def eliminating_pairs_with_sum_over_401(pairs):
     new_pairs = []
     print(f"\nEliminating pairs that have a sum greater than 401")
@@ -169,7 +182,7 @@ def prime_list(limit):
 
 
 def main():
-    primes = prime_list(800)
+    primes = prime_list(UPPER)
     problem()
     print("\n\nSOLUTION\n========")
     number_of_pairs()
@@ -178,6 +191,7 @@ def main():
     pairs = qube_prime_elimination(pairs, primes)
     pairs = eliminating_even_sums(pairs)
     pairs = eliminating_primes_plus_two_sums(pairs, primes)
+    pairs = eliminating_qube_prime_sums(pairs, primes)
     pairs = eliminating_pairs_with_sum_over_401(pairs)
     pairs = eliminating_unique_sums(pairs)
     pairs = eliminating_multiple_factorizations(pairs)
