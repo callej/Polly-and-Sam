@@ -196,7 +196,7 @@ def main():
     pairs = eliminating_unique_sums(pairs)
     pairs = eliminating_multiple_factorizations(pairs)
     pairs = eliminating_multiple_sums(pairs)
-    print(f'\nThe two number are: {pairs[0]}')
+    print(f'\nThe two numbers are: {pairs[0]}')
 
 
 if __name__ == "__main__":
