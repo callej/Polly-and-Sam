@@ -19,7 +19,7 @@ What are the two numbers?
 <br>
 <br>
 
-## Solution
+## Solution 1
 There is a lot of “hidden” information in this problem. Or more accurately, there is a lot of information hidden in plain sight. 
 Initially this dialogue may seem impossible since the numbers could be any two numbers in the range of $2$ to $800$ inclusive, and neither of Polly or Sam have a clue what the numbers are. 
 <br>
@@ -153,15 +153,71 @@ Since we only have one possible pair left, it means that also we, from their con
 **Far Out!!!**
 
 That remaining pair is the solution!
-
 <br>
 <br>
 <br>
 
-## The Python Program
+### The Python Program - polly_n_sam.py
 The Python program, `polly_n_sam.py` follows the steps above eliminating  pairs with each piece of information. The code is not optimized for speed, memory usage, or number of lines. Instead, it is created to clearly illustrate how the information in each piece of the conversation can be used to eliminate some pairs. This also makes it possible to analyze each piece of information and the effect it has more thoroughly for the curious one.
 <br>
 The program will at the end print out the solution, the only remaining pair, which are the two numbers we are looking for.
+
+<br>
+<br>
+<br>
+
+
+## Solution 2
+This solution is an easier solution, which doesn't require any other math than a 7-year-old first grader would know: addition and multiplication. It is more generic, and it is a direct straight forward interpretation of the dialogue between Polly and Sam:
+- If Polly doesn't know the two numbers then the product she was told must be possible to be created by two or more of the available pairs of numbers. All the pairs that create a unique product can be eliminated since she would know the two numbers if she was told any of these products.
+- If Polly knows the two numbers, then the product that she was told can only be created by a unique pair of the available pairs. Otherwise, she couldn't know which pair that produced the product she has. All pairs that produce a product that also some other pair produces can be eliminated.
+- If Sam doesn't know the two numbers then the sum he was told must be possible to be created by two or more of the available pairs of numbers. All the pairs that create a unique sum can be eliminated since he would know the two numbers if he was told any of these sums.
+- If Sam knows the two numbers, then the sum that he was told can only be created by a unique pair of the available pairs. Otherwise, he couldn't know which pair that produced the sum he has. All pairs that produce a sum that also some other pair produces can be eliminated.
+- If Sam knows that Polly doesn't know the two numbers, then he must have a sum that is not any of the sums produced by the pairs that are eliminated when Polly doesn't know the two numbers. Otherwise, he can't know for sure that Polly wouldn't know the two numbers.
+
+This is all there is to it. From here on it is only addition and multiplication, plus keeping track of if a product or a sum can be produced in only one unique way or in more than one way from the available pairs of numbers. From each part of the conversation, we can eliminate certain pairs as outlined above. Eventually there is only one pair left.
+<br>
+This is a more logical solution, and it translates the conversation straight into what it means in terms of which pairs can be eliminated.
+
+In summary:
+- If Polly or Sam knows the two numbers then we keep only those pairs that create a unique product or sum respectively. The other pairs can be eliminated.
+- If Polly or Sam doesn't know the two numbers then we keep the pairs that produce a product or sum respectively that some other pair also produces. The pairs that produce a unique product or sum respectively can be eliminated.
+- If Sam knows that Polly doesn't know the numbers then we can eliminate all pairs that produce a sum that can be produced by any of the pairs producing a unique product.
+
+The initial condition and the elimination of the redundant pairs are still the same as before, but all the steps are kept below for a complete solution.
+
+We will again take this step by step from the information we have:
+<br>
+<br>
+<br>
+
+### Initial Condition
+We are looking for $2$ numbers, $x$ and $y$, that can each be in the range $[2,800]$. In other words, we are looking for a pair 
+$(x,y)$, where $$x,y∈N$$ $$2≤x,y≤800$$
+There are $799\cdot799=638401$ possible such pairs of $(x,y)$
+<br>
+<br>
+<br>
+
+### Redundant Pairs
+We know that Polly knows the product of these numbers and Sam knows the sum of these numbers. Both multiplication and addition are commutative operations. In other words: 
+$$x\cdot y=y\cdot x$$
+$$x+y=y+x$$
+This means that the pair $(x,y)$ is the same as $(y,x)$. With this knowledge, almost half of the 638401 possible pairs are redundant so we can get rid of them. 
+<br>
+For $x=2$, $y$ can be in the range $2≤y≤800 ⇒799$ pairs $(x,y)$
+<br>
+For $x=3$, $y$ can be in the range $3≤y≤800 ⇒798$ pairs $(x,y)$
+<br>
+For $x=4$, $y$ can be in the range $4≤y≤800 ⇒797$ pairs $(x,y)$, and so on...
+<br>
+This is $799+798+797+⋯+1=\dfrac{799+1}{2}\cdot799=400\cdot799=319600$ possible pairs remaining. 
+<br>
+<br>
+<br>
+
+### Polly does not know the two numbers
+Now Polly says: “_I don’t know the two numbers._”
 
 <br>
 <br>
