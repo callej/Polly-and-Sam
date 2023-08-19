@@ -5,13 +5,13 @@
 
 Polly and Sam are visited by a friend. The friend, having thought of two numbers between 2 and 800 inclusive, whispers their product to Polly and their sum to Sam. The following dialogue takes place:
 <br>
-**Polly**:     "_I don’t know the two numbers_"
+**Polly**:&nbsp;&nbsp;&nbsp;"_I don’t know the two numbers_"
 <br>
-**Sam**:      "_I know, and neither do I_"
+**Sam**:&nbsp;&nbsp;&nbsp;&nbsp;"_I know, and neither do I_"
 <br>
-**Polly**:     "_I know the two numbers_"
+**Polly**:&nbsp;&nbsp;&nbsp;"_I know the two numbers_"
 <br>
-**Sam**:      "_So do I_"
+**Sam**:&nbsp;&nbsp;&nbsp;&nbsp;"_So do I_"
 <br>
 
 What are the two numbers?
@@ -168,7 +168,7 @@ The program will at the end print out the solution, the only remaining pair, whi
 
 
 ## Solution 2
-This solution is an easier solution, which doesn't require any other math than a 7-year-old first grader would know: addition and multiplication. It is more generic, and it is a direct straight forward interpretation of the dialogue between Polly and Sam:
+This solution is an easier solution, which doesn't require any other math than a 7-year-old first grader would know: addition and multiplication. It is more generic, and it is a direct and straight forward interpretation of the dialogue between Polly and Sam:
 - If Polly doesn't know the two numbers then the product she was told must be possible to be created by two or more of the available pairs of numbers. All the pairs that create a unique product can be eliminated since she would know the two numbers if she was told any of these products.
 - If Polly knows the two numbers, then the product that she was told can only be created by a unique pair of the available pairs. Otherwise, she couldn't know which pair that produced the product she has. All pairs that produce a product that also some other pair produces can be eliminated.
 - If Sam doesn't know the two numbers then the sum he was told must be possible to be created by two or more of the available pairs of numbers. All the pairs that create a unique sum can be eliminated since he would know the two numbers if he was told any of these sums.
@@ -279,7 +279,7 @@ That remaining pair is the solution!
 ### The Python Program - polly_n_sam2.py
 The Python program, `polly_n_sam2.py` follows the steps above eliminating pairs with each piece of information. The code is not optimized for speed, memory usage, or number of lines. Instead, it is created to clearly illustrate how the information in each piece of the conversation can be used to eliminate some pairs. This also makes it possible to analyze each piece of information and the effect it has more thoroughly for the curious one.
 
-This approach is more generic than the previous approach in solution 1. It allows us to change the boundaries of this problem and still get correct results. In some cases, there may not be any solution to the problem. In other cases, there may be several possible solutions. If there are several possible solutions, Polly and Sam will still know what the two numbers are. It is just us who are listening to their conversation that don't know which of the solutions is the correct one. Any of the solutions would work for them, but we don't have enough information to find out which.
+This approach is more generic than the previous approach in Solution 1. It allows us to change the boundaries of this problem and still get correct results. In some cases, there may not be any solution to the problem. In other cases, there may be several possible solutions. If there are several possible solutions, Polly and Sam will still know what the two numbers are. It is just us who are listening to their conversation that don't know which of the solutions is the correct one. Any of the solutions would work for them, but we don't have enough information to find out which.
 
 The program itself is very straight forward. Once we have set up the list of all pairs with the redundant pairs eliminated, we can simply create a function for each of the statements where we either select the ambiguous pairs or the unique pairs and return them. The whole structure will look like this:
 
@@ -292,7 +292,7 @@ The program itself is very straight forward. Once we have set up the list of all
     print(f'\nThe solution is: {pairs}')
 
 <br>
-The program will at the end print out the solution, the only remaining pair (if the boundaries are 2 and 800), which are the two numbers we are looking for.
+The program will at the end print out the solution, the only remaining pair (at least if the boundaries are 2 and 800), which are the two numbers we are looking for.
 
 
 
@@ -305,21 +305,21 @@ There is no danger in trying this at home. If someone wants to try this on his/h
 
 Calle Johansson and Leif Persson are visited by their very good friend Professor Gunnar Haxell. Professor Haxell, having thought of two natural numbers, says that he will tell Calle the sum of the numbers and Leif the sum of the squares of the numbers. He then whispers the sum of the numbers to Calle so no one else can hear and then the sum of the squares of the numbers to Leif so no one else can hear. Then the following conversation takes place:
 <br>
-**Leif**:	“_I don’t know the numbers_”
+**Leif**:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;“_I don’t know the numbers_”
 <br>
-**Calle**:	“_I don’t know the numbers_”
+**Calle**:&nbsp;&nbsp;&nbsp;“_I don’t know the numbers_”
 <br>
-**Leif**:	“_I don’t know the numbers_”
+**Leif**:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;“_I don’t know the numbers_”
 <br>
-**Calle**:	“_I don’t know the numbers_”
+**Calle**:&nbsp;&nbsp;&nbsp;“_I don’t know the numbers_”
 <br>
-**Leif**:	“_I don’t know the numbers_”
+**Leif**:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;“_I don’t know the numbers_”
 <br>
-**Calle**:	“_I don’t know the numbers_”
+**Calle**:&nbsp;&nbsp;&nbsp;“_I don’t know the numbers_”
 <br>
-**Leif**:	“_I know the numbers!_”
+**Leif**:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;“_I know the numbers!_”
 <br>
-**Calle**:	“_Men att seså seså, det har jag aldrig hört förut!_”
+**Calle**:&nbsp;&nbsp;&nbsp;“_Men att seså seså, det har jag aldrig hört förut!_”
 
 What are the two natural numbers?
 
