@@ -148,7 +148,7 @@ With this step we can eliminate $4470$ pairs. We have only $1$ possible pair rem
 <br>
 
 ### We know the two numbers
-Since we only have one possible pair left, it means that also we, from their conversation, know what the two number are!
+Since we only have one possible pair left, it means that also we, from their conversation, know what the two numbers are!
 <br>
 **Far Out!!!**
 
@@ -158,7 +158,7 @@ That remaining pair is the solution!
 <br>
 
 ### The Python Program - polly_n_sam.py
-The Python program, `polly_n_sam.py` follows the steps above eliminating  pairs with each piece of information. The code is not optimized for speed, memory usage, or number of lines. Instead, it is created to clearly illustrate how the information in each piece of the conversation can be used to eliminate some pairs. This also makes it possible to analyze each piece of information and the effect it has more thoroughly for the curious one.
+The Python program, `polly_n_sam.py` follows the steps above eliminating pairs with each piece of information. The code is not optimized for speed, memory usage, or number of lines. Instead, it is created to clearly illustrate how the information in each piece of the conversation can be used to eliminate some pairs. This also makes it possible to analyze each piece of information and the effect it has more thoroughly for the curious one.
 <br>
 The program will at the end print out the solution, the only remaining pair, which are the two numbers we are looking for.
 
@@ -218,6 +218,83 @@ This is $799+798+797+⋯+1=\dfrac{799+1}{2}\cdot799=400\cdot799=319600$ possible
 
 ### Polly does not know the two numbers
 Now Polly says: “_I don’t know the two numbers._”
+<br>
+This means that the product that Polly has been told is ambiguous. More than one of the possible pairs can produce this product. We will keep all pairs that produce the same product as some other pair and eliminate all pairs that produce a unique product.
+<br>
+With this information we can eliminate $94349$ pairs. We now have $225251$ possible pairs remaining.
+<br>
+<br>
+<br>
+
+### Sam knows that Polly doesn't know the two numbers
+Next Sam says: “_I know…_” in response to Polly's statement: “_I don’t know the two numbers._”
+<br>
+Now, if Sam knows that Polly doesn't know the two numbers, then the sum that Sam is told can't be any number. For some sums Sam can't be sure that Polly doesn't know the two numbers. Specifically, all the pairs that were eliminated in the previous step would produce a product that is unique, and Polly would know. If Sam has a sum that can be produced by any of these eliminated pairs then he can't for sure be certain that Polly doesn't know the two numbers. In other words, since Sam knows that Polly doesn't know the two numbers, then we can eliminate all pairs that produce a sum which is the same as the sum of any of the previously eliminated pairs. 
+<br>
+With this information we can eliminate $213959$ pairs. We now have $11292$ possible pairs remaining.
+<br>
+<br>
+<br>
+
+### Sam does not know the two numbers
+After Sam has claimed that he knows that Polly doesn't know the two numbers he goes on saying: “_…and neither do I_”
+<br>
+This means that the sum that Sam has been told is ambiguous in terms of the remaining pairs. More than one of the remaining pairs can produce this sum. We will keep all pairs that produce the same sum as some other pair and eliminate all pairs that produce a unique sum. Unfortunately, this information doesn't allow us to eliminate any pairs further.
+<br>
+With this information we cannot eliminate any pairs. We still have $11292$ possible pairs remaining.
+<br>
+<br>
+<br>
+
+### Polly now knows the two numbers
+Polly now says: “_I know the two numbers_”
+<br>
+This means that the product that Polly has been given can only be created in one way from the remaining possible pairs. We can therefore eliminate all pairs that have the same product as some other remaining pair and keep all the pairs that produce a unique product.
+<br>
+With this information we can eliminate $7214$ pairs. We now have $4078$ possible pairs remaining.
+<br>
+<br>
+<br>
+
+### Sam also now knows the two numbers
+Now Sam says: “_So do I_”
+<br>
+This means in the same way that Sam must have been given a sum that can only be created in one way from the remaining pairs. We can eliminate all pairs that have the same sum as some other pair and keep all the pairs that produce a unique sum. That is the only way Sam couldn't know for sure which pair would be correct.
+<br>
+With this step we can eliminate $4077$ pairs. We have only $1$ possible pair remaining. 
+<br>
+<br>
+<br>
+
+### We know the two numbers
+Since we only have one possible pair left, it means that also we, from their conversation, know what the two numbers are!
+<br>
+**Far Out!!!**
+
+That remaining pair is the solution!
+<br>
+<br>
+<br>
+
+### The Python Program - polly_n_sam2.py
+The Python program, `polly_n_sam2.py` follows the steps above eliminating pairs with each piece of information. The code is not optimized for speed, memory usage, or number of lines. Instead, it is created to clearly illustrate how the information in each piece of the conversation can be used to eliminate some pairs. This also makes it possible to analyze each piece of information and the effect it has more thoroughly for the curious one.
+
+This approach is more generic than the previous approach in solution 1. It allows us to change the boundaries of this problem and still get correct results. In some cases, there may not be any solution to the problem. In other cases, there may be several possible solutions. If there are several possible solutions, Polly and Sam will still know what the two numbers are. It is just us who are listening to their conversation that don't know which of the solutions is the correct one. Any of the solutions would work for them, but we don't have enough information to find out which.
+
+The program itself is very straight forward. Once we have set up the list of all pairs with the redundant pairs eliminated, we can simply create a function for each of the statements where we either select the ambiguous pairs or the unique pairs and return them. The whole structure will look like this:
+
+    original_pairs = redundant_pair_elimination(LOW, HIGH)
+    pairs = polly_does_not_know_the_numbers(original_pairs)
+    pairs = sam_knows_that_polly_does_not_know_the_numbers(pairs, original_pairs)
+    pairs = sam_does_not_know_the_numbers(pairs)
+    pairs = polly_knows_the_two_numbers(pairs)
+    pairs = sam_knows_the_two_numbers(pairs)
+    print(f'\nThe solution is: {pairs}')
+
+<br>
+The program will at the end print out the solution, the only remaining pair (if the boundaries are 2 and 800), which are the two numbers we are looking for.
+
+
 
 <br>
 <br>
