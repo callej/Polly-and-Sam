@@ -249,7 +249,7 @@ With this information we cannot eliminate any pairs. We still have $11292$ possi
 ### Polly now knows the two numbers
 Polly now says: “_I know the two numbers_”
 <br>
-This means that the product that Polly has been given can only be created in one way from the remaining possible pairs. We can therefore eliminate all pairs that have the same product as some other remaining pair and keep all the pairs that produce a unique product.
+This means that the product that Polly has been told can only be created in one way from one of the remaining possible pairs. We can therefore eliminate all pairs that have the same product as some other remaining pair and keep only the pairs that produce a unique product.
 <br>
 With this information we can eliminate $7214$ pairs. We now have $4078$ possible pairs remaining.
 <br>
@@ -259,7 +259,7 @@ With this information we can eliminate $7214$ pairs. We now have $4078$ possible
 ### Sam also now knows the two numbers
 Now Sam says: “_So do I_”
 <br>
-This means in the same way that Sam must have been given a sum that can only be created in one way from the remaining pairs. We can eliminate all pairs that have the same sum as some other pair and keep all the pairs that produce a unique sum. That is the only way Sam couldn't know for sure which pair would be correct.
+This means in the same way that Sam must have been told a sum that can only be created in one way from one of the remaining pairs. We can eliminate all pairs that have the same sum as some other pair and keep only the pairs that produce a unique sum. This is the only way Sam can know for sure which pair is the correct two numbers.
 <br>
 With this step we can eliminate $4077$ pairs. We have only $1$ possible pair remaining. 
 <br>
